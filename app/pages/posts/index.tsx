@@ -23,7 +23,7 @@ export const PostsList = () => {
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={Routes.ShowPostPage({ postId: post.id })}>
-              <a>{post.name}</a>
+              <a>{post.text}</a>
             </Link>
           </li>
         ))}
