@@ -1,4 +1,5 @@
 # dependencies
+coverage/*
 node_modules
 .yarn/*
 !.yarn/patches
