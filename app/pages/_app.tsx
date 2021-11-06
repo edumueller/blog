@@ -6,7 +6,10 @@ import {
   AuthorizationError,
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
+  queryClient,
 } from "blitz"
+import { ReactQueryDevtools } from "react-query/devtools"
+import { QueryClientProvider } from "react-query"
 import LoginForm from "app/auth/components/LoginForm"
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -17,7 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
-      {getLayout(<Component {...pageProps} />)}
+      <QueryClientProvider client={queryClient as any}>
+        {getLayout(<Component {...pageProps} />)}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </ErrorBoundary>
   )
 }
