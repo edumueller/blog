@@ -2,7 +2,7 @@ import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import createPost from "app/posts/mutations/createPost"
 import { PostForm, FORM_ERROR } from "app/posts/components/PostForm"
-import { createPostSchema } from "./validations"
+import createPostSchema from "./validations"
 
 const NewPostPage: BlitzPage = () => {
   const router = useRouter()

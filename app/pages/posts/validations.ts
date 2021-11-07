@@ -1,2 +1,3 @@
 import { CreatePost } from "app/posts/mutations/createPost"
-export const createPostSchema = CreatePost
+const createPostSchema = CreatePost
+export default createPostSchema
