@@ -25,6 +25,13 @@ export const PostsList = () => {
             <Link href={Routes.ShowPostPage({ postId: post.id })}>
               <a>{post.text}</a>
             </Link>
+            <ul>
+              {post.comments.map((comment) => (
+                <li key={comment.id}>
+                  {comment.text} - {comment.votes} votes
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

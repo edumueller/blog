@@ -17,8 +17,14 @@ export const Post = () => {
       </Head>
 
       <div>
-        <h1>Post {post.id}</h1>
-        <pre>{JSON.stringify(post, null, 2)}</pre>
+        <h1>{post.text}</h1>
+        <ul>
+          {post.comments.map((comment) => (
+            <li key={comment.id}>
+              {comment.text} - {comment.votes} votes
+            </li>
+          ))}
+        </ul>
 
         <Link href={Routes.EditPostPage({ postId: post.id })}>
           <a>Edit</a>
